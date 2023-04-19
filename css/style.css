@@ -82,7 +82,7 @@ a {
 
 2. .block__element {} 代表.block的后代，用于形成一个完整的.block的整体。
 
-3. .block--modifier {} 代表.block的不同专题或不同版本。
+3. .block--modifier {} 代表.block的不同专题或不同版本或不同的区块。
 
 4. _ 单下划线：单下划线用来描述一个块或者块的子元素的一种状态。
 */
@@ -108,8 +108,46 @@ a {
   }
 }
 /* 4. Lists 列表 */
-.list{
+.list {
   list-style: none;
   padding-left: 0;
   color: var(--color-headings);
 }
+/* 
+list__item
+我们将区域名和结构名用双下划线分开
+这个item元素是区域内表达的元素，他不是另一个单独的元素或者组件，它只是存在于这个列表中的
+ */
+/* 
+  list--inline 不同的区块 也就是横行排练变成行内样式，
+  但是行内样式 padding有四边的边距但是上下不能撑开盒子，
+  margin 只有左右的边距 所以要设置成行内块样式，   
+   <p>ssss <span>ssss</span> </p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+ */
+/*p {
+  background-color: red;
+}
+span {
+  background-color: gold;
+  padding: 20px;
+  margin: 20px;
+}*/
+
+.list--inline .list__item {
+  display: inline-block;
+  margin-right: 2rem;
+}
+.list--tick {
+  list-style-image: url(../images/tick.svg);
+  padding-left: 3rem;
+}
+.list--tick .list__item{
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width:1024px){
+  .list--tick .list__item{
+    padding-left: 0;
+  }
+}
+
