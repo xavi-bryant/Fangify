@@ -46,24 +46,64 @@ p {
   }
 }
 /* 2. Links */
-a{
+a {
   text-decoration: none;
 }
-.link-arrow{
+.link-arrow {
   color: var(--color-accent);
   text-transform: uppercase;
   font-size: 2rem;
   font-weight: bold;
 }
-.link-arrow::after{
-  content: '-->';
+.link-arrow::after {
+  content: "-->";
   margin-left: 5px;
 }
-.link-arrow:hover::after{
+.link-arrow:hover::after {
   margin-left: 10px;
 }
-@media screen and (min-width:1024px){
-  .link-arrow{
-    font-size:1.5rem ;
+@media screen and (min-width: 1024px) {
+  .link-arrow {
+    font-size: 1.5rem;
+  }
+}
+/* 3. badges 标签 */
+/* 先定义结构 然后是外观 */
+.badge {
+  white-space: nowrap;
+  padding: 0.5rem 2rem;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #fff;
+  border-radius: 20px;
+}
+/* BEM命名规范
+1. .block {}  代表了更高级别的抽象或组件。
+
+2. .block__element {} 代表.block的后代，用于形成一个完整的.block的整体。
+
+3. .block--modifier {} 代表.block的不同专题或不同版本。
+
+4. _ 单下划线：单下划线用来描述一个块或者块的子元素的一种状态。
+*/
+
+.badge--primary {
+  background-color: var(--color-primary);
+}
+.badge--secondary {
+  background-color: var(--color-secondary);
+}
+
+.badge--small {
+  font-size: 1.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+  /* 正常默认是大标签  */
+  .badge {
+    font-size: 1.5rem;
+  }
+  .badge--small {
+    font-size: 1.2rem;
   }
 }
