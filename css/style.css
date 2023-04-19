@@ -67,7 +67,7 @@ a {
     font-size: 1.5rem;
   }
 }
-/* 3. badges 标签 */
+/* 3. badges 大小标签 */
 /* 先定义结构 然后是外观 */
 .badge {
   white-space: nowrap;
@@ -106,4 +106,10 @@ a {
   .badge--small {
     font-size: 1.2rem;
   }
+}
+/* 4. Lists 列表 */
+.list{
+  list-style: none;
+  padding-left: 0;
+  color: var(--color-headings);
 }
