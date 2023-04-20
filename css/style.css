@@ -4,8 +4,12 @@
   --color-accent: #ff3400;
   --color-headings: #1b0760;
   --color-body: #918ca4;
+  --color-border: #ccc;
+  --border-radius: 30px;
 }
-*,::after,*::before{
+*,
+::after,
+*::before {
   box-sizing: border-box;
 }
 /* 1. Typography 字体设置 */
@@ -144,24 +148,24 @@ span {
   list-style-image: url(../images/tick.svg);
   padding-left: 3rem;
 }
-.list--tick .list__item{
+.list--tick .list__item {
   padding-left: 0.5rem;
   margin-bottom: 1rem;
 }
-@media screen and (min-width:1024px){
-  .list--tick .list__item{
+@media screen and (min-width: 1024px) {
+  .list--tick .list__item {
     padding-left: 0;
   }
 }
 /* 5. Icons */
-.icon{
+.icon {
   width: 40px;
   height: 40px;
 }
-.icon--primary{
+.icon--primary {
   fill: var(--color-primary);
 }
-.icon-container{
+.icon-container {
   background-color: #f3f9fa;
   width: 64px;
   height: 64px;
@@ -172,7 +176,7 @@ span {
 }
 /* 5. Buttons  */
 /* 1.先文本 再是内边距 圆角 */
-.btn{
+.btn {
   font-size: 1.8rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -184,44 +188,77 @@ span {
   cursor: pointer;
   white-space: nowrap;
   text-align: center;
-
 }
-.btn--primary{
+.btn--primary {
   background-color: var(--color-primary);
   color: #fff;
 }
-.btn--primary:hover{
+.btn--primary:hover {
   background-color: #3a8ffd;
 }
-.btn--secondary{
+.btn--secondary {
   background-color: var(--color-secondary);
   color: #fff;
 }
-.btn--secondary:hover{
+.btn--secondary:hover {
   background-color: #00c8eb;
 }
-.btn--accent{
+.btn--accent {
   background-color: var(--color-accent);
   color: #fff;
 }
-.btn--accent:hover{
+.btn--accent:hover {
   background-color: #ec3000;
 }
-.btn--block{
+.btn--block {
   width: 100%;
   display: inline-block;
 }
-.btn--outline{
+.btn--outline {
   background-color: #fff;
   color: var(--color-headings);
   border: 2px solid var(--color-headings);
 }
-.btn--outline:hover{
+.btn--outline:hover {
   background-color: var(--color-headings);
   color: #fff;
 }
-@media screen and (min-width:1024px){
-  .btn{
+@media screen and (min-width: 1024px) {
+  .btn {
+    font-size: 1.5rem;
+  }
+}
+/* 6 Inputs */
+
+.input {
+  padding: 1.5rem 3.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  outline: 0;
+  color: var(--color-headings);
+  font-size: 2rem;
+}
+::placeholder {
+  color: #cdcbd7;
+}
+
+.input-group {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  display: flex;
+}
+.input-group .input {
+  border: 0;
+  /* flex:1 1 auto; */
+  /* flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto */
+  flex-grow: 1;
+  padding:1.5rem 1rem ;
+}
+.input-group .btn{
+  margin: 4px;
+}
+@media screen and (min-width: 1024px) {
+  .input {
     font-size: 1.5rem;
   }
 }
