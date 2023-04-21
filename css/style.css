@@ -263,7 +263,7 @@ span {
     font-size: 1.5rem;
   }
 }
-/* 7.1 Cards */
+/* 7. Cards */
 .card {
   border-radius: 7px;
   box-shadow: 0 0 20px 10px #f3f3f3;
@@ -335,4 +335,17 @@ span {
   .plan__billing-cycle {
     font-size: 1.7rem;
   }
+}
+/* 9.media  */
+.media{
+  display: flex;
+}
+.media__title{
+  margin-top: 0;
+}
+.media__body{
+  margin: 0 2rem;
+}
+.media__image{
+  margin-top: 1rem;
 }
