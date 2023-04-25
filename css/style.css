@@ -28,6 +28,7 @@ h2,
 h3 {
   color: var(--color-headings);
   margin-bottom: 1rem;
+  line-height: 1.1;
 }
 h1 {
   font-size: 7rem;
@@ -614,3 +615,29 @@ span {
     border: 0;
   }
 }
+/* 2. Hero 大横幅组件  + op*/
+.hero{
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+
+}
+.hero__tagline {
+  font-size: 2rem;
+  color: #b9c3cf;
+  letter-spacing: 1px;
+  margin: 2rem 0 5rem;
+}
+.hero__image{
+  width: 100%;
+}
+@media screen and  (min-width:768px) {
+  /* 我们希望有一点顶padding 但是在pc端 图片有这个长度*/
+  .hero{
+    padding-top: 0;
+  }
+   .hero__content{
+    text-align: left;
+    align-self: center;
+   }
+}
+
+
