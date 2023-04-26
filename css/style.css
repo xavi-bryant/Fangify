@@ -199,6 +199,16 @@ span {
   cursor: pointer;
   white-space: nowrap;
   text-align: center;
+  outline: 0;
+}
+/* 如果按钮里面有图标 */
+.btn .icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  /* vertical-align 属性设置元素的垂直对齐方式。
+css中的vertical-align 属性只能用于 行内元素 和 置换元素（例如 图像和表单输入框） ，此属性不继承 */
+  vertical-align: middle;
 }
 .btn--primary {
   background-color: var(--color-primary);
@@ -270,7 +280,7 @@ span {
   /* flex:1 1 auto; */
   /* flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto */
   flex-grow: 1;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 2rem;
 }
 .input-group .btn {
   margin: 4px;
@@ -281,12 +291,15 @@ span {
   }
 }
 /* 7. Cards */
+
 .card {
   border-radius: 7px;
   box-shadow: 0 0 20px 10px #f3f3f3;
-  overflow: hidden;
 }
 
+.card__header {
+  border-radius: 7px 7px 0 0;
+}
 .card__header,
 .card__body {
   padding: 2rem 3rem;
@@ -300,10 +313,16 @@ span {
   background-color: var(--color-secondary);
   color: #fff;
 }
+.card--primary .badge--primary {
+  background-color: #126de4;
+}
 .card--secondary .badge--secondary {
   background-color: #02cdf1;
 }
 /*  8 Plans*/
+.plan {
+  transition: transform 0.2s ease-out;
+}
 .plan__name {
   color: #fff;
   margin: 0;
@@ -328,19 +347,26 @@ span {
 .plan .list__item {
   margin-bottom: 2rem;
 }
-/* .plan--popular .card__header{
- position: relative;
-} */
 .plan--popular {
+  transform: scale(1.1);
+}
+.plan--popular .card__header {
   position: relative;
 }
+
 .plan--popular .card__header::before {
   content: url(../images/popular.svg);
   width: 40px;
   display: inline-block;
   position: absolute;
-  top: -6px;
+  top: -8px;
   right: 5%;
+}
+.plan:hover {
+  transform: scale(1.05);
+}
+.plan--popular:hover {
+  transform: scale(1.15);
 }
 @media screen and (min-width: 1024px) {
   .plan__name {
@@ -350,6 +376,9 @@ span {
     font-size: 5rem;
   }
   .plan__billing-cycle {
+    font-size: 1.6rem;
+  }
+  .plan__description {
     font-size: 1.7rem;
   }
 }
@@ -616,9 +645,8 @@ span {
   }
 }
 /* 2. Hero 大横幅组件  + op*/
-.hero{
+.hero {
   clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-
 }
 .hero__tagline {
   font-size: 2rem;
@@ -626,18 +654,57 @@ span {
   letter-spacing: 1px;
   margin: 2rem 0 5rem;
 }
-.hero__image{
+.hero__image {
   width: 100%;
 }
-@media screen and  (min-width:768px) {
+@media screen and (min-width: 768px) {
   /* 我们希望有一点顶padding 但是在pc端 图片有这个长度*/
-  .hero{
+  .hero {
     padding-top: 0;
   }
-   .hero__content{
+  .hero__content {
     text-align: left;
     align-self: center;
-   }
+  }
 }
-
-
+/* 3. domain block */
+.block-domin .input-group {
+  box-shadow: 0 0 30px 20px #ecebee;
+  border: 0;
+  margin: 4rem auto;
+  max-width: 700px;
+}
+.block-domain__prices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 6rem);
+  font-size: 2rem;
+  font-weight: 600;
+  justify-items: center;
+  max-width: 750px;
+  margin: 0 auto;
+}
+/* 将所有的列表排入一行 */
+@media screen and (min-width: 768px) {
+  .block-domain__prices {
+    /* grid-template-columns: repeat(6,1fr); */
+    /* 不能固定这个6 如果要增加或者删除一项呢 
+     auto-fit 尽量平均分配所有项
+     minmax（100px，1fr）最小宽度是100px 最大宽度是等分的宽度
+    */
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+}
+/* 4. plan block */
+.block-plans .grid {
+  gap: 8rem 4rem;
+}
+/* 移动端太宽 */
+.block-plans .card {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.block-plans  .plan__description{
+  color: #000;
+  font-weight: bold;
+}
