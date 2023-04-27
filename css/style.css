@@ -528,7 +528,7 @@ css中的vertical-align 属性只能用于 行内元素 和 置换元素（例�
   }
   /* 存在一个btn--streched */
 }
-/* 14. Collapsible 折叠组件  */
+/* 14. Collapsible 底部折叠组件  */
 
 .collapsible__header {
   display: flex;
@@ -763,3 +763,81 @@ css中的vertical-align 属性只能用于 行内元素 和 置换元素（例�
   }
 }
 /* 7. Testimonials block */
+
+/* 8. Footer 底部导航*/
+.footer {
+  background-color: #232323;
+  padding-top: 10rem;
+}
+.footer__section {
+  padding: 2rem;
+  border-bottom: 1px solid #393939;
+}
+.footer a {
+  color: #777;
+  transition: color 0.3s;
+}
+.footer a:hover {
+  color: #fff;
+}
+.footer__section {
+  padding: 2rem;
+  border-bottom: 1px solid #393939;
+}
+.footer__section .list {
+  margin: 0;
+}
+.footer__heading {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+.footer__brand {
+  margin-top: 5rem;
+  text-align: center;
+}
+.footer__brand img {
+  /* TODO: 考虑将100%宽度应用于所有img的标签 */
+  max-width: 230px;
+  width: 100%;
+}
+.footer__copyright {
+  font-size: 2.1rem;
+  color: #fff;
+  opacity: 0.3;
+}
+
+
+@media screen and (min-width: 768px) {
+  .footer {
+    font-size: 1.5rem;
+  }
+  .footer__heading {
+    font-size: 1.6rem;
+  }
+
+  .footer__sections {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    /* grid-template-columns: repeat(5, 1fr); */
+  }
+  .footer .collapsible__chevron {
+    display: none;
+  }
+  .footer .collapsible__content {
+    opacity: 1;
+    /* max-height: 100%; */
+    display: block;
+  }
+  .footer__brand {
+    order: -1;
+    margin-top: 1rem;
+  }
+  .footer__copyright {
+    font-size: 1.5rem;
+  }
+  .footer__section {
+    border: 0;
+  }
+
+}
