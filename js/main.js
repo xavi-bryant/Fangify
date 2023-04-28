@@ -15,3 +15,7 @@ collapsibles.forEach((item) =>
     }
   })
 );
+document.body.addEventListener("touchmove", bodyScroll, false);
+function bodyScroll(event) {
+　　event.preventDefault();
+}
