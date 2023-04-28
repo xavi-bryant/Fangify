@@ -198,8 +198,8 @@ span {
   font-size: 1.8rem;
   font-weight: 600;
   text-transform: uppercase;
-  padding: 2rem 3rem;
-  padding: 2rem;
+  /* padding: 2rem 3rem; */
+  padding: 2rem 4vw;
   border-radius: 40px;
   border: 0;
   margin: 1rem 0;
@@ -287,7 +287,19 @@ css中的vertical-align 属性只能用于 行内元素 和 置换元素（例�
   /* flex:1 1 auto; */
   /* flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto */
   flex-grow: 1;
+  /* button 不管剩余空间多少也不会放大 */
   padding: 1.5rem 2rem;
+  /* 让输入框的宽度由input-group决定  */
+  width: 0;
+  /* 如果没有设置width,当内部元素的内容大小超过平均分配的剩余空间时,元素的宽度等于内容大小,如果设置了width并且这个width的大小小于平均分配的剩余空间大小时,取平均分配的剩余空间;
+当flex设置为 1 时 相当于 剩余空间大小 = 父元素的宽度 因此
+平均的剩余空间大小等于 = 父元素的宽度 / 元素的个数
+直接设置width为0可以保证元素宽度平分父元素宽度 */
+  /* 假设：设置flex：1的项为A
+
+所以，当A项的width为0时，剩余空间等于容器的宽度减去除A项以外（因为此时它的width为0），其他flex项的大小 ，然后把剩余空间给A项
+
+补充：width也可以不设为0，只要设置的宽度不大于剩余空间就可以，因为此时的剩余空间为 flex 容器的宽度减去所有 flex 项的宽度加起来的大小，然后把剩余空间给A项 */
 }
 .input-group .btn {
   margin: 4px;
@@ -565,7 +577,9 @@ css中的vertical-align 属性只能用于 行内元素 和 置换元素（例�
 /* 如果block的内部距发生变化 斜切内边距也要发生变化 */
 .block {
   --padding-vertical: 6rem;
-  padding: var(--padding-vertical) 2rem;
+  /* Due to their dynamic nature, CSS variables are currently not statically checked */
+  /* Add a default value in case the variable isn't defined and you're set: */
+  padding: var(--padding-vertical, 6rem) 2rem;
   /* border: 2px solid red; */
 }
 .block__header {
@@ -611,11 +625,15 @@ css中的vertical-align 属性只能用于 行内元素 和 置换元素（例�
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 0 1rem;
+  padding: 1rem;
   align-items: center;
 }
 .nav__image {
   transform: translateY(5px);
+  width: 150px;
+}
+img {
+  width: 100%;
 }
 .nav__list {
   /* 因为flex 布局 space-between两端对齐 平分空间 如果占了100%它就要换行了 */
@@ -627,6 +645,9 @@ css中的vertical-align 属性只能用于 行内元素 和 置换元素（例�
   padding: 0.5rem 2rem;
   border-bottom: 1px solid #222;
 }
+.nav__item:last-of-type {
+  border-bottom: none;
+}
 .nav__item > a {
   color: #d2d0db;
   transition: color 0.3s;
@@ -636,7 +657,7 @@ css中的vertical-align 属性只能用于 行内元素 和 置换元素（例�
 }
 .nav__toggler {
   opacity: 0.5;
-  transition: box-shdaow 0.15s;
+  transition: box-shadow 0.15s;
   cursor: pointer;
 }
 .nav.collapsible--expanded .nav__toggler {
@@ -690,8 +711,9 @@ css中的vertical-align 属性只能用于 行内元素 和 置换元素（例�
   max-width: 700px;
 }
 .block-domain__prices {
+  color: var(--color-headings);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 6rem);
   font-size: 2rem;
   font-weight: 600;
@@ -808,7 +830,6 @@ css中的vertical-align 属性只能用于 行内元素 和 置换元素（例�
   opacity: 0.3;
 }
 
-
 @media screen and (min-width: 768px) {
   .footer {
     font-size: 1.5rem;
@@ -839,5 +860,5 @@ css中的vertical-align 属性只能用于 行内元素 和 置换元素（例�
   .footer__section {
     border: 0;
   }
-
 }
+/* 9. 整合 */
