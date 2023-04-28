@@ -22,14 +22,16 @@
 }
 html {
   font-size: 62.5%;
+  overflow: hidden;
+  overflow-y: auto;
 }
 body {
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-size: 2.4rem;
   line-height: 1.5;
   color: var(--color-body);
-  width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
+  overflow-y: auto;
 }
 h1,
 h2,
