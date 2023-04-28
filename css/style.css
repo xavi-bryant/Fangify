@@ -1,4 +1,4 @@
-@import './normalize.css';
+@import "./normalize.css";
 
 :root {
   --color-primary: #2584ff;
@@ -28,6 +28,8 @@ body {
   font-size: 2.4rem;
   line-height: 1.5;
   color: var(--color-body);
+  width: 100%;
+  overflow-x: hidden;
 }
 h1,
 h2,
