@@ -315,7 +315,7 @@ css中的vertical-align 属性只能用于 行内元素 和 置换元素（例�
   border-radius: 7px;
   box-shadow: 0 0 20px 10px #f3f3f3;
 }
-
+/* 防止圆角被背景图片覆盖给自己加上圆角 */
 .card__header {
   border-radius: 7px 7px 0 0;
 }
@@ -785,11 +785,20 @@ img {
   }
 }
 /* 7. Testimonials block */
-
-/* 8. Footer 底部导航*/
+/* 8. callout-signup */
+.callout-signup {
+  transform: translateY(14rem);
+}
+@media screen and (min-width: 768px) {
+  .callout-signup {
+    /* transform: translateY(14rem); */
+    margin: 0 10rem;
+  }
+}
+/* 9. Footer 底部导航*/
 .footer {
   background-color: #232323;
-  padding-top: 10rem;
+  padding-top: 20rem;
 }
 .footer__section {
   padding: 2rem;
