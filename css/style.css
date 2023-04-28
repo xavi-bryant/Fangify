@@ -26,16 +26,16 @@
 }
 html {
   font-size: 62.5%;
-  overflow: hidden;
-  overflow-y: auto;
+  /* overflow: hidden;
+  overflow-y: auto; */
 }
 body {
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-size: 2.4rem;
   line-height: 1.5;
   color: var(--color-body);
-  overflow: hidden;
-  overflow-y: auto;
+  /* overflow: hidden;
+  overflow-y: auto; */
 }
 h1,
 h2,
@@ -637,6 +637,9 @@ css中的vertical-align 属性只能用于 行内元素 和 置换元素（例�
   flex-wrap: wrap;
   padding: 1rem;
   align-items: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 9999;
 }
 .nav__image {
   transform: translateY(5px);
