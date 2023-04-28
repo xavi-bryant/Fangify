@@ -23,7 +23,7 @@
     <link rel="icon" href="images/favicon-sm.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicon-md.png" />
     <link rel="apple-touch-icon" sizes="144x144" href="images/favicon-lg.png" />
-    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- <link rel="stylesheet" href="css/normalize.css" /> -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,7 +37,7 @@
     <!-- 1. nav -->
     <header>
       <nav class="nav collapsible">
-        <a href="/" class="nav__image"><img src="images/logo.svg" alt="" /></a>
+        <a aria-label="Fangify" href="/" class="nav__image"><img src="images/logo.svg" alt="" /></a>
         <svg class="icon icon--white nav__toggler">
           <use href="images/sprite.svg#menu"></use>
         </svg>
@@ -85,6 +85,7 @@
       </header>
       <div class="input-group">
         <input
+          aria-label="Domain"
           type="text"
           class="input"
           placeholder="Enter domain name here..."
